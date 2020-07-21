@@ -12,11 +12,12 @@ ll read(){
     return f*x;
 }
 ull h1[maxn],h2[maxn];
+ull base=147;
 char s[maxn];
 void gethash(int len){
 	h1[0]=1;h2[0]=1;
 	for(int i=1;i<=len;i++)
-		h1[i]=h1[i-1]*131+(s[i-1]-'a'),h2[i]=h2[i-1]*131;
+		h1[i]=h1[i-1]*base+(s[i-1]-'a'),h2[i]=h2[i-1]*base;
 }
 ull usehash(int l,int r){
 	return h1[r]-h1[l-1]*h2[r-l+1];
